@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #1ec016;
+    --primary-foreground: #ffffff;
+    --primary-light: #57de6b;
+    --primary-dark: #1fc016;
+
+    /* Secondary Colors */
+    --secondary-background: #292929;
+    --secondary-foreground: #ffffff;
+    --secondary-light: #343434;
+    --secondary-dark: #3e3e3e;
+
+    /* Accent Colors */
+    --accent-success: #a6ff00;
+    --accent-warning: #f2ce16;
+    --accent-danger: #ff2e2e;
+    --accent-info: #3ec3ff;
+
+    /* Text Colors */
+    --text-primary: #040404;
+    --text-secondary: #b1b1b1;
+    --text-success: #1ec016;
+    --text-warning: #f2ce16;
+    --text-danger: #ff2e2e;
+    --text-info: #ff8900;
+    --text-white: #ffffff;
+
+    /* Background Colors */
+    --bg-main: #292929;
+    --bg-card: #333333;
+    --bg-overlay: #5b5b5b33;
+    --bg-success: #61dc561e;
+    --bg-warning: #f2ce1666;
+    --bg-danger: #ff0000;
+    --bg-accent: #a6ff0033;
+
+    /* Border Colors */
+    --border-primary: #1ec016;
+    --border-secondary: #61dc56;
+    --border-accent: #a6ff00;
+    --border-warning: #f2ce16;
+    --border-info: #ff8900;
+    --border-light: #ffffff33;
+
+    /* Typography Variables */
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+
+    /* Font Weight Variables */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line Height Variables */
+    --line-height-tight: 14px;
+    --line-height-normal: 18px;
+    --line-height-relaxed: 21px;
+    --line-height-loose: 27px;
+
+    /* Spacing Variables */
+    --spacing-xs: 4px;
+    --spacing-sm: 6px;
+    --spacing-base: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 30px;
+
+    /* Border Radius Variables */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-base: 6px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 14px;
+    --radius-2xl: 24px;
+
+    /* Component-specific Colors */
+    --button-bg: var(--bg-accent);
+    --button-border: var(--border-accent);
+    --button-text: var(--text-white);
+
+    --chip-bg: var(--secondary-light);
+    --chip-border: var(--border-warning);
+    --chip-text: var(--text-warning);
+
+    --textarea-bg: var(--secondary-light);
+    --textarea-border: var(--border-info);
+    --textarea-text: var(--text-white);
+
+    --icon-button-bg: var(--text-white);
+    --icon-button-bg-alt: #ffffff19;
+
+    --line-bg: var(--border-light);
+    --line-bg-alt: #ffffff7f;
+  }
+
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-main);
+    font-weight: 400; /* Default to normal weight */
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  code, pre, .mono {
+    font-family: 'Poppins', sans-serif; /* Override monospace with Poppins */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+
+
+/* Toggle Switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-bottom: 20px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+    height: 30px;
+    border: 1px solid white;
+    width: 52px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #198754;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+.slider.round {
+  border-radius: 28px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Sidebar */
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  white-space: nowrap;
+  position: absolute;
+  left: 120%;             /* move tooltip to the right */
+  top: 50%;               /* center vertically */
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.35);
+  z-index: 100;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #222 transparent transparent;
+}

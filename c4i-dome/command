@@ -1,0 +1,9 @@
+For file upload - scp video_name.mp4 ubuntu@13.234.129.181:/home/ubuntu/folder/public/assets/current_missions/videos/
+
+git pull
+
+npm i
+
+npm run build
+
+npm run start
